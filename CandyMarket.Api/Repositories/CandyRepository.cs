@@ -29,6 +29,14 @@ namespace CandyMarket.Api.Repositories
         {
             using (var db = new SqlConnection(_connectionString))
             {
+                var sql = @"INSERT INTO [dbo].[Candy]
+                                        ([Name]
+                                        ,[CandyTypeId])
+                           VALUES
+                                        (@Name
+                                        ,@CandyTypeId)";
+
+                return db.Execute(sql, newCandy) == 1;
 
             }
             //throw new NotImplementedException();
