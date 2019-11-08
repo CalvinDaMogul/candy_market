@@ -44,7 +44,15 @@ namespace CandyMarket.Api.Repositories
 
         public bool EatCandy(Guid candyIdToDelete)
         {
-            throw new NotImplementedException();
+            using (var db = new SqlConnection(_connectionString))
+            {
+                var sql = @"delete
+                            from Candy
+                            where [Id] = @candyIdToDelete";
+
+                return db.Execute(sql, new { candyIdToDelete }) == 1;
+            }
+            //throw new NotImplementedException();
         }
     }
 }
