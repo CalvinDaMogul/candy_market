@@ -30,11 +30,11 @@ namespace CandyMarket.Api.Repositories
             using (var db = new SqlConnection(_connectionString))
             {
                 var sql = @"INSERT INTO [dbo].[Candy]
-                                        ([Name]
-                                        ,[CandyTypeId])
+                                        ([fullname]
+                                        ,[Id])
                            VALUES
-                                        (@Name
-                                        ,@CandyTypeId)";
+                                        (@fullname
+                                        ,@Id)";
 
                 return db.Execute(sql, newCandy) == 1;
 
