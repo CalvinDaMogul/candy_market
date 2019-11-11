@@ -18,23 +18,23 @@ namespace CandyMarket.Api.Repositories
             {
               
 
-                var candies = db.Query<Candy>("Select * Candy");
+                var candies = db.Query<Candy>("Select * From Members");
 
                 return candies.ToList();
             }
-            //throw new NotImplementedException();
+            
         }
 
         public bool AddCandy(AddCandyDto newCandy)
         {
             using (var db = new SqlConnection(_connectionString))
             {
-                var sql = @"INSERT INTO [dbo].[Candy]
+                var sql = @"INSERT INTO [dbo].[Members]
                                         ([Name]
-                                        ,[CandyTypeId])
+                                        ,[userid])
                            VALUES
-                                        (@Name
-                                        ,@CandyTypeId)";
+                                        (@fullname
+                                        ,@userid)";
 
                 return db.Execute(sql, newCandy) == 1;
 
@@ -47,7 +47,7 @@ namespace CandyMarket.Api.Repositories
             using (var db = new SqlConnection(_connectionString))
             {
                 var sql = @"delete
-                            from Candy
+                            from Members
                             where [Id] = @candyIdToDelete";
 
                 return db.Execute(sql, new { candyIdToDelete }) == 1;
