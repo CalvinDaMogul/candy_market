@@ -30,7 +30,9 @@ namespace CandyMarket.Api.Repositories
             using (var db = new SqlConnection(_connectionString))
             {
                 var sql = @"INSERT INTO [dbo].[Members]
-                                        ([Name]
+                                        ([fullname]
+                                         ,[displayname]
+                                          ,[email]
                                         ,[userid])
                            VALUES
                                         (@fullname
@@ -42,7 +44,7 @@ namespace CandyMarket.Api.Repositories
             //throw new NotImplementedException();
         }
 
-        public bool EatCandy(Guid candyIdToDelete)
+        public bool EatCandy(candyIdToDelete)
         {
             using (var db = new SqlConnection(_connectionString))
             {

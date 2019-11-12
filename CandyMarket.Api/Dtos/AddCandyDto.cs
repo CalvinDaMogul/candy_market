@@ -2,6 +2,6 @@
 {
     public class AddCandyDto
     {
-        public string fullname { get; set; }
+        
     }
 }
