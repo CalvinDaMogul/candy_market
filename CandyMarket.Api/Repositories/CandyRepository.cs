@@ -46,14 +46,14 @@ namespace CandyMarket.Api.Repositories
                                         (
                                         
                                         @UserName
-                                        ,@email
-                                        ,@status
-                                        ,@billingActive
-                                        ,@has2FA
-                                        ,@hasSSO
-                                        ,@userid
-                                        ,@fullname
-                                        ,@displayname)";
+                                        ,@Email
+                                        ,@Status
+                                        ,@BillingActive
+                                        ,@Has2FA
+                                        ,@HasSSO
+                                        ,@UserId
+                                        ,@FullName
+                                        ,@DisplayName)";
 
                 return db.Execute(sql, newCandy) == 1;
 

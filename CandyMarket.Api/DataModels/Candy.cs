@@ -11,7 +11,7 @@ namespace CandyMarket.Api.DataModels
         public int billingactive { get; set; }
         public int hasSSO { get; set; }
         public int has2fa { get; set; }
-        public string userid { get; set; }
+        public  string userid { get; set; }
         public string fullname { get; set; }
         public string displayname { get; set; }
     }
