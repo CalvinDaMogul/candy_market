@@ -30,13 +30,30 @@ namespace CandyMarket.Api.Repositories
             using (var db = new SqlConnection(_connectionString))
             {
                 var sql = @"INSERT INTO [dbo].[Members]
-                                        ([fullname]
-                                         ,[displayname]
-                                          ,[email]
-                                        ,[userid])
+                                         (
+                                         [username]
+                                         ,[email]
+                                         ,[status]
+                                         ,[billingActive]
+                                        ,[has2FA]
+                                         ,[hasSSO]
+                                         ,[userid]
+                                         ,[fullname]
+                                         ,[displayname])
+
+                           output inserted.*
                            VALUES
-                                        (@fullname
-                                        ,@userid)";
+                                        (
+                                        
+                                        @UserName
+                                        ,@email
+                                        ,@status
+                                        ,@billingActive
+                                        ,@has2FA
+                                        ,@hasSSO
+                                        ,@userid
+                                        ,@fullname
+                                        ,@displayname)";
 
                 return db.Execute(sql, newCandy) == 1;
 
@@ -44,7 +61,7 @@ namespace CandyMarket.Api.Repositories
             //throw new NotImplementedException();
         }
 
-        public bool EatCandy(candyIdToDelete)
+        public bool EatCandy(int candyIdToDelete)
         {
             using (var db = new SqlConnection(_connectionString))
             {
