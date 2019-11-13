@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 
 import Home from '../Home/Home';
-import './App.scss';
+// import './App.scss';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   // props contains Location, Match, and History

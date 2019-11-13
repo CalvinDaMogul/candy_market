@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:50555/api';
+const baseUrl = 'http://localhost:44337';
 
 
 const getValues = () => new Promise((resolve, reject) => {
@@ -10,4 +10,6 @@ const getValues = () => new Promise((resolve, reject) => {
     .catch((error) =>{
         reject(error);
     })
-})
+});
+
+export default {getValues};
