@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './App.scss';
 
 function App() {
@@ -7,6 +8,6 @@ function App() {
       <button>Click Me!!!</button>
     </div>
   );
-}
+};
 
 export default App;
